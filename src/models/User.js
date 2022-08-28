@@ -19,10 +19,7 @@ const User = new Schema({
     roles:
         [ {type: String, ref: 'Role'} ],
 
-    tasks: {
-        type: [{ type: String}],
-
-    }
+    tasks: [{ type: Schema.Types.ObjectId, ref: 'Task', unique: true}],
 
 })
 module.exports = mongoose.model('User', User)

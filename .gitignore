@@ -1,0 +1,15 @@
+# compiled output
+/node_modules
+
+# IDEs and editors
+/.idea
+.vscode/*
+
+logs
+*.log
+npm-debug.log*
+
+# Configs
+.env.development
+.env.local
+.env.override
