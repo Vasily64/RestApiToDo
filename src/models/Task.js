@@ -3,7 +3,8 @@ const { Schema } = require('mongoose');
 
 const Time = { type: String, validate: /^\d{1,2}:\d{2}$/ };
 
-const Task = new Schema({
+const TaskSchema = new Schema({
+    user:  { type: Schema.Types.ObjectId, ref: 'User', unique: true },
     title: {
         type: String,
     },
@@ -36,8 +37,6 @@ const Task = new Schema({
     teg: {
         type: Number,
     },
-    user:  { type: Schema.Types.ObjectId, ref: 'User', unique: true},
-
 
 })
-module.exports = mongoose.model('Task', Task)
+module.exports = mongoose.model('Task', TaskSchema)

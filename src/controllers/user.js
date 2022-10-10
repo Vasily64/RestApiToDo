@@ -5,6 +5,11 @@ const UserController = {
         const result = await UserService.create(req.body);
         res.json(result);
     },
+    async createTask(req, res) {
+        const { id } = req.params;
+        await UserService.createTask(id , req.body);
+        res.sendStatus(200);
+    },
     async update(req, res) {
         const { id } = req.params;
        await UserService.update(id , req.body);
